@@ -52,7 +52,7 @@ func main(){
 				if err != nil{
 					panic(err)
 				}
-				// http1.0からはチャンクにcontent-lengthが含まれるようになったぞ！
+				// http1.0からはチャンクにcontent-lengthが含まれるようになった
 				fmt.Println(string(dump))
 				content := "Hello World\n"
 
@@ -61,7 +61,7 @@ func main(){
 					StatusCode: 200,
 					ProtoMajor: 1,
 					ProtoMinor: 1,
-					ContentLength: int64(len(content)), // バイト数が付与されたぞ！
+					ContentLength: int64(len(content)), // バイト数が付与された
 					Body: ioutil.NopCloser(
 						  strings.NewReader(content)),
 				}

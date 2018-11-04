@@ -27,7 +27,7 @@ func main(){
 	}
 	fmt.Printf("Access: %d\n", current)
 
-	// 受信のことは考えずに３連続で発射する
+	// 連続で送信
 	for i := 0; i < len(sendMessages); i++{
 		lastMessage := i == len(sendMessages) - 1
 		request, err := http.NewRequest(
@@ -36,7 +36,7 @@ func main(){
 			nil)
 		
 		if lastMessage {
-			request.Header.Add("Connection", "close") // 最後にcloseの文言いれてるけどサーバ側の処理には関係ない
+			request.Header.Add("Connection", "close")
 		}else{
 			request.Header.Add("Connection", "keep-alive")
 		}
@@ -57,7 +57,7 @@ func main(){
 	close(requests)
 
 	reader := bufio.NewReader(conn)
-	// レスポンスを、ここでまとめて受信する
+	// レスポンスを、ここでまとめて受信
 	for request := range requests {
 		// 受信
 		response, err := http.ReadResponse(reader, request)
@@ -70,7 +70,6 @@ func main(){
 		}
 		// サーバの情報を表示
 		fmt.Println(string(dump))
-		// 3回送ってるので３回めで終わる
 		if current == len(sendMessages){
 			break
 		}

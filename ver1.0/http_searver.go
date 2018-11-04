@@ -38,7 +38,7 @@ func main(){
 				panic(err)
 			}
 			fmt.Println(string(dump))
-			// ここでクライアントサイドに出す時のやつが整形されてる
+			// ここでクライアントサイドに出す時の文字が形成されている
 			response := http.Response{
 				StatusCode: 200,
 				ProtoMajor: 1,
@@ -48,7 +48,7 @@ func main(){
 			}
 			// 返却
 			response.Write(conn)
-			// ver1.0のhttpは１回１回プツプツ切れてたらしい
+			// ver1.0のhttpは１回１回プツプツ切れる
 			conn.Close()
 		}()
 	}

@@ -48,7 +48,6 @@ func main(){
 		panic("wrong transfer encoding")
 	}
 
-	// 長い、あの文章はここでいイテレートされて表示される
 	for {
 		// \nまでのサイズ取得
 		sizeStr, err := reader.ReadBytes('\n')

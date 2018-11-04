@@ -78,7 +78,6 @@ func main(){
 			io.Copy(os.Stdout, reader)
 			reader.Close()
 		}else{
-			// 圧縮されていなくても出すので結局２回出すことになる
 			io.Copy(os.Stdout, response.Body)
 		}
 

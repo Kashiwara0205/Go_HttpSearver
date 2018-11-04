@@ -55,7 +55,7 @@ func processSession(conn net.Conn){
 
 	reader := bufio.NewReader(conn)
 	for {
-		// ココらへんはKeep-Aliveの仕組みと同じである
+		// ここはKeep-Aliveの仕組みと同じ
 		conn.SetReadDeadline(time.Now().Add(5 * time.Second))
 
 		// request受け取り
