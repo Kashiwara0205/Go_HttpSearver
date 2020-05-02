@@ -1,5 +1,5 @@
-# GO_HttpSearver
-「Goならわかるシステムプログラミング」を見ながらHTTPサーバを実装する
+# HttpSearver
+[Goならわかるシステムプログラミング](https://www.lambdanote.com/products/go)を見ながらHTTPサーバを実装する  
 
 ## 目的
 HTTPサーバ関連の知識入手
